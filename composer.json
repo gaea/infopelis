@@ -19,7 +19,8 @@
         "sensio/framework-extra-bundle": "~3.0",
         "sensio/generator-bundle": "~2.3",
         "incenteev/composer-parameter-handler": "~2.0",
-        "wtfzdotnet/php-tmdb-api": ">=1.2.0"
+        "wtfzdotnet/php-tmdb-api": ">=1.2.0",
+        "ext-intl": "*"
     },
     "scripts": {
         "post-install-cmd": [
