@@ -2,4 +2,4 @@ _assetic:
     resource: .
     type: assetic
 _app:
-    resource: /home/gaea/infopelis/app/config/routing_dev.yml
+    resource: /home/gaea/infopelis1/app/config/routing_dev.yml
