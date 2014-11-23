@@ -29,8 +29,6 @@ class SearchController extends Controller
      */
 	public function indexAction(Request $request)
     {
-     * @param  array $parameters
-     * @param  array $headers
 		$movieTitle = $request->get('movie');
 		$client = new Client($this->get('TmdbToken'));
 		$movies = array();
