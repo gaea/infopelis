@@ -1,0 +1,15 @@
+gaea_movies_infopelis_index:
+    pattern:  /
+    defaults: { _controller: GaeaMoviesInfopelisBundle:Search:index }
+    
+gaea_movies_infopelis_search:
+    pattern:  /search
+    defaults: { _controller: GaeaMoviesInfopelisBundle:Search:search }
+    
+gaea_movies_infopelis_actor_detail:
+    pattern:  /actorDetail/{id}/{order}
+    defaults: { _controller: GaeaMoviesInfopelisBundle:Search:actorDetail, order: DESC }
+    
+gaea_movies_infopelis_movie_detail:
+    pattern:  /movieDetail/{id}
+    defaults: { _controller: GaeaMoviesInfopelisBundle:Search:movieDetail }

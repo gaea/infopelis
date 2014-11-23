@@ -1,0 +1,7 @@
+parameters:
+#    gaea_movies_infopelis.example.class: Gaea\Bundle\Movies\InfopelisBundle\Example
+
+services:
+#    gaea_movies_infopelis.example:
+#        class: %gaea_movies_infopelis.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

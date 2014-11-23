@@ -1,0 +1,4 @@
+gaea_movies_infopelis:
+    resource: "@GaeaMoviesInfopelisBundle/Resources/config/routing.yml"
+    prefix:   /
+

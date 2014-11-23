@@ -1,0 +1,33 @@
+<center>
+	<div id="movies" class="row">
+		{% if movies|length > 0 %}
+			{% for movie in movies %}
+				<a href="{{ path('gaea_movies_infopelis_movie_detail', {'id': movie.id}) }}">
+					<div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
+						<h5>{{ movie.original_title }}<br/><small>Release date: {{ movie.release_date }}</small></h5>
+						{% if movie.poster_path != '' %}
+							<div class="img-thumbnail thumbnail-movie-list">
+								<img src="https://image.tmdb.org/t/p/w130/{{ movie.poster_path }}" alt="{{ movie.original_title }}" class="item img-responsive img-movie-list"/>
+							</div>
+						{% else %}
+							<div class="img-thumbnail thumbnail-movie-list col-middle">
+								<img src="{{ asset('bundles/gaeamoviesinfopelis/images/no-movie-image.png') }}" alt="{{ movie.original_title }}" class="item img-responsive img-no-movie-list"/>
+							</div>
+						{% endif %}
+					</div>
+				</a>
+				{% if loop.index % 4 == 0 %}
+					<div class="clearfix visible-md visible-lg"></div>
+				{% endif %}
+				{% if loop.index % 3 == 0 %}
+					<div class="clearfix visible-sm"></div>
+				{% endif %}
+			{% endfor %}
+		{% else %}
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			<h3 class="text-primary">We're sorry, no movies were found for your seach.</h3>
+		</div>
+		{% endif %}
+
+	</div>
+</center>

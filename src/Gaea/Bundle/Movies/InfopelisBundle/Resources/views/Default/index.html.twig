@@ -1,0 +1,31 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}
+    InfoPelis
+{% endblock %}
+  
+{% block stylesheets %}
+{% endblock %}
+
+{% block body %}
+		<div class="row page-header">
+			<div class="col-md-3 pull-left">
+				<h4 class="text-primary">
+					{% if search == true %}
+						Movie search results:
+					{% else%}
+						Discover Movies
+					{% endif %}
+				</h4>
+			</div>			
+			<div class="col-md-2 pull-right">
+				<a class="btn btn-default btn-primary" onclick="orderMoviesBy()">Sort By Release Date</a>
+			</div>
+		</div>
+		{% include 'GaeaMoviesInfopelisBundle:Default:movieList.html.twig' with {'movies': movies} %}
+{% endblock %}
+
+{% block javascripts %}	
+	<script type="text/javascript" src="{{ asset('bundles/gaeamoviesinfopelis/js/actorDetail.js') }}"></script>
+{% endblock %}
+

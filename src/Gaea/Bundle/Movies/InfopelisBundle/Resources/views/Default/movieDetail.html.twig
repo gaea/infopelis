@@ -1,0 +1,66 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}
+    InfoPelis
+{% endblock %}
+  
+{% block stylesheets %}
+{% endblock %}
+
+{% block body %}
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12 col-sm-12">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title text-center">{{ info.title }}</h3>
+					</div>
+					<div class="panel-body">
+						<div class="row">
+							<div class="col-sm-3">
+								<center>
+									{% if info.poster_path != '' %}
+										<div class="img-thumbnail pull-right">
+											<img src="https://image.tmdb.org/t/p/w150/{{ info.poster_path }}" alt="{{ info.title }}" class="img-responsive"/>
+										</div>
+									{% else %}
+										<div class="img-thumbnail thumbnail-movie pull-right">
+											<img src="{{ asset('bundles/gaeamoviesinfopelis/images/no-movie-image.png') }}" alt="{{ info.title }}" class="img-responsive img-no-movie"/>
+										</div>
+									{% endif %}
+								</center>
+							</div>
+							<div class="col-sm-9">
+								<dl class="dl-horizontal">
+									<dt>Original title</dt>
+									<dd>{{ info.original_title }}</dd>
+									<dt>Overview</dt>
+									<dd>{{ info.overview }}</dd>
+									<dt>Release date</dt>
+									<dd>{{ info.release_date }}</dd>
+									<dt>Status</dt>
+									<dd>{{ info.status }}</dd>
+									<dt>Genres</dt>
+									<dd>
+										{% for genre in info.genres %}
+											{{ genre.name }}.
+										{% endfor %}
+									</dd>
+								</dl>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-12 pull-left">
+								<h3 class="text-primary text-center">Cast</h3>
+							</div>
+						</div>
+						{% include 'GaeaMoviesInfopelisBundle:Default:actorList.html.twig' with {'actors': credits} %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}
+
+{% block javascripts %}
+{% endblock %}
