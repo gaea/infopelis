@@ -7,8 +7,8 @@ gaea_movies_infopelis_search:
     defaults: { _controller: GaeaMoviesInfopelisBundle:Search:search }
     
 gaea_movies_infopelis_actor_detail:
-    pattern:  /actorDetail/{id}/{order}
-    defaults: { _controller: GaeaMoviesInfopelisBundle:Search:actorDetail, order: DESC }
+    pattern:  /actorDetail/{id}
+    defaults: { _controller: GaeaMoviesInfopelisBundle:Search:actorDetail }
     
 gaea_movies_infopelis_movie_detail:
     pattern:  /movieDetail/{id}
