@@ -16,7 +16,21 @@
 									Known for: 
 									{% for movie in actor.known_for %}
 										{% if movie.original_title is defined %}
-											<a href="{{ path('gaea_movies_infopelis_movie_detail', {'id': movie.id}) }}">
+											<a  class="popoverMovieData" 
+												rel="popover" 
+												data-content="<center>
+																<div class='img-thumbnail thumbnail-movie-list'>
+																	<img class='img-movie-list' src='
+																		{% if movie.poster_path != '' %}
+																			https://image.tmdb.org/t/p/w130/{{ movie.poster_path }}
+																		{% else %}
+																			{{ asset('bundles/gaeamoviesinfopelis/images/no-movie-image.png') }}
+																		{% endif %}
+																	'/>
+																</div>
+															  </center>"
+												data-original-title="<center class='text-primary'>{{ movie.original_title }}<br/><small>Release Date: {{ movie.release_date }}</small></center>" 
+												href="{{ path('gaea_movies_infopelis_movie_detail', {'id': movie.id}) }}">
 												{{ movie.original_title }}. 
 											</a>
 										{% endif %}
@@ -26,15 +40,13 @@
 						</small>
 					</h5>
 					<a href="{{ path('gaea_movies_infopelis_actor_detail', {'id': actor.id}) }}">
-						{% if actor.profile_path != '' %}
-							<div class="img-thumbnail thumbnail-actor-list">
+						<div class="img-thumbnail thumbnail-actor-list col-middle">
+							{% if actor.profile_path != '' %}
 								<img src="https://image.tmdb.org/t/p/w130/{{ actor.profile_path }}" alt="{{ actor.name }}" class="img-responsive img-actor-list"/>
-							</div>
-						{% else %}
-							<div class="img-thumbnail thumbnail-actor-list col-middle">
+							{% else %}
 								<img src="{{ asset('bundles/gaeamoviesinfopelis/images/no-user-image.jpg') }}" alt="{{ actor.name }}" class="img-responsive img-no-actor-list"/>
-							</div>
-						{% endif %}
+							{% endif %}
+						</div>
 					</a>
 				</div>
 				{% if loop.index % 4 == 0 %}
@@ -51,3 +63,4 @@
 		{% endif %}
 	</center>
 </div>
+

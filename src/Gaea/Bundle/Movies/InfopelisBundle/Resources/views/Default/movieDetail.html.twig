@@ -19,15 +19,13 @@
 						<div class="row">
 							<div class="col-sm-3">
 								<center>
-									{% if info.poster_path != '' %}
-										<div class="img-thumbnail pull-right">
+									<div class="img-thumbnail pull-right col-middle">
+										{% if info.poster_path != '' %}	
 											<img src="https://image.tmdb.org/t/p/w150/{{ info.poster_path }}" alt="{{ info.title }}" class="img-responsive"/>
-										</div>
-									{% else %}
-										<div class="img-thumbnail thumbnail-movie pull-right">
+										{% else %}
 											<img src="{{ asset('bundles/gaeamoviesinfopelis/images/no-movie-image.png') }}" alt="{{ info.title }}" class="img-responsive img-no-movie"/>
-										</div>
-									{% endif %}
+										{% endif %}
+									</div>
 								</center>
 							</div>
 							<div class="col-sm-9">

@@ -18,17 +18,15 @@
 					<div class="panel-body">
 						<div class="row">
 							<div class="col-sm-3">
-								<center>
-									{% if info.profile_path != '' %}
-										<div class="img-thumbnail pull-right">
+								<div class="img-thumbnail pull-right col-middle">
+									<center>
+										{% if info.profile_path != '' %}
 											<img src="https://image.tmdb.org/t/p/w150/{{ info.profile_path }}" alt="{{ info.name }}" class="img-responsive"/>
-										</div>
-									{% else %}
-										<div class="img-thumbnail thumbnail-actor pull-right col-middle">
+										{% else %}
 											<img src="{{ asset('bundles/gaeamoviesinfopelis/images/no-user-image.jpg') }}" alt="{{ info.name }}" class="img-responsive img-no-actor"/>
-										</div>
-									{% endif %}
-								</center>
+										{% endif %}
+									</center>
+								</div>
 							</div>
 							<div class="col-sm-9">
 								<dl class="dl-horizontal">
