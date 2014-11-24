@@ -10,36 +10,40 @@
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
-		<div class="container container-xs-height">
+		<div class="container">
 			<div class="page-header">
 				<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 					<div class="container-fluid">
-						<a class="navbar-brand text-primary text-md" href="{{ path('gaea_movies_infopelis_index') }}"><p>InfoPelis</p></a>
-						<form class="navbar-form navbar-right" action="{{ path('gaea_movies_infopelis_index') }}" method="get">
-							<div class="form-group">
-								<input type="text" class="form-control" name="movie" placeholder="Search by Movie's Title">
-							</div>
-							<button type="submit" class="btn btn-default btn-primary">Find Movies</button>
-						</form>
-						<form class="navbar-form navbar-right" action="{{ path('gaea_movies_infopelis_search') }}" method="get">
-							<div class="form-group">
-								<input type="text" class="form-control" name="actor" placeholder="Search by Actor's Name">
-							</div>
-							<button type="submit" class="btn btn-default btn-primary">Find Actors</button>
-						</form>
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+							<a class="navbar-brand" href="{{ path('gaea_movies_infopelis_index') }}">InfoPelis</a>
+						</div>
+						<div class="collapse navbar-collapse navbar-right">
+							<form class="navbar-form navbar-right" action="{{ path('gaea_movies_infopelis_index') }}" method="get">
+								<div class="form-group">
+									<input type="text" class="form-control" name="movie" placeholder="Search by Movie's Title">
+								</div>
+								<button type="submit" class="btn btn-default btn-primary">Find Movies</button>
+							</form>
+							<form class="navbar-form navbar-right" action="{{ path('gaea_movies_infopelis_search') }}" method="get">
+								<div class="form-group">
+									<input type="text" class="form-control" name="actor" placeholder="Search by Actor's Name">
+								</div>
+								<button type="submit" class="btn btn-default btn-primary">Find Actors</button>
+							</form>
+						</div>
 					</div>
 				</nav>
 			</div>
-			<div class="page-header">
-				{% block body %}{% endblock %}
-			</div>
-			</div>
-				<center>
-					<footer class="page-footer">
-						<a class="text-primary" href="http://gaea-uv.blogspot.com" target="_blank">infopelis - gaea-uv - {{ 'now'|date('Y') }}<br/><br/></a>
-					</footer>
-				</center>
-			</div>
+			{% block body %}{% endblock %}
+			<center>
+				<a class="text-primary" href="http://gaea-uv.blogspot.com" target="_blank">infopelis - gaea-uv - {{ 'now'|date('Y') }}<br/><br/></a>
+			</center>
 			<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 			<script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 			{% block javascripts %}{% endblock %}

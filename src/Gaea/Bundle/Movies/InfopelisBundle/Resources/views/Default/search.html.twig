@@ -9,11 +9,14 @@
 
 {% block body %}
 	<div class="row page-header">
-		<div class="col-md-3 pull-left">
+		<div class="col-md-3 pull-left ">
 			<h4 class="text-primary">Actor search results:</h4>
 		</div>
 	</div>
-	{% include 'GaeaMoviesInfopelisBundle:Default:actorList.html.twig' with {'actors': results} %}
+	<div class="container-fluid">
+		{% include 'GaeaMoviesInfopelisBundle:Default:actorList.html.twig' with {'actors': results} %}
+	</div>
+	<hr/>
 {% endblock %}
 
 {% block javascripts %}

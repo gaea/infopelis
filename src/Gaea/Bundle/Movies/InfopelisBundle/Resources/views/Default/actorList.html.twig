@@ -1,5 +1,5 @@
-<div class="row">
-	<center>
+<center>
+	<div class="row">
 		{% if actors|length > 0 %}
 			{% for actor in actors %}
 				<div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
@@ -19,6 +19,7 @@
 											<a  class="popoverMovieData" 
 												rel="popover" 
 												data-content="<center>
+																<h5 class='text-primary'>{{ movie.original_title }}<br/><small>Release Date: {{ movie.release_date }}</small></h4>
 																<div class='img-thumbnail thumbnail-movie-list'>
 																	<img class='img-movie-list' src='
 																		{% if movie.poster_path != '' %}
@@ -29,7 +30,6 @@
 																	'/>
 																</div>
 															  </center>"
-												data-original-title="<center class='text-primary'>{{ movie.original_title }}<br/><small>Release Date: {{ movie.release_date }}</small></center>" 
 												href="{{ path('gaea_movies_infopelis_movie_detail', {'id': movie.id}) }}">
 												{{ movie.original_title }}. 
 											</a>
@@ -61,6 +61,5 @@
 				<h3 class="text-primary">We're sorry, no actors were found</h3>
 			</div>
 		{% endif %}
-	</center>
-</div>
-
+	</div>
+</center>
