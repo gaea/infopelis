@@ -43,8 +43,7 @@ class SearchController extends Controller
 		{
 			$movies = $client->getDiscoverApi()->discoverMovies(array(
 				'page' => 1,
-				'language' => 'en',
-				't' => 'terminator'
+				'language' => 'en'
 			));
 		}
 		
